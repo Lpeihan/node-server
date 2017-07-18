@@ -73,9 +73,11 @@ function makeResponse(res) {
     if (typeof toSend === 'string') {
       res.end(toSend);
     }
+
     if (typeof toSend === 'object') {
       res.end(JSON.stringify(toSend));
     }
+
     if (typeof toSend === 'number') {
       res.writeHead(toSend, arguments[1]);
       res.end();

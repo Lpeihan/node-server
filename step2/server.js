@@ -16,14 +16,14 @@ const routes = {
   '/search': function(req, res) {
     res.end('username=' + req.body.username + ',password=' + req.body.password);
   }
-}
+};
 
 const server = http.createServer(function(req, res) {
   rootPath(req, res);
 });
 
-console.log('node server start~');
-server.listen(8888);
+server.listen(8080);
+console.log('visit http://localhost:8080');
 
 function rootPath(req, res) {
   const pathObj = url.parse(req.url, true);

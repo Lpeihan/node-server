@@ -36,5 +36,5 @@ const server = http.createServer(function(req, res) {
   staticRoot(path.resolve(__dirname, 'static'), req, res);
 });
 
-console.log('node server start~');
-server.listen(8888);
+server.listen(8080);
+console.log('visit http://localhost:8080');
