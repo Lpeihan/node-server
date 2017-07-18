@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hello</title>
+  <link rel="stylesheet" href="css/a.css">
+</head>
+<body>
+  <h1>hello world</h1>
+  <img src="images/avatar.jpg" alt="">
+  <form action="/search" method="POST">
+    <input type="text" name="username">
+    <input type="text" name="password">
+    <input type="submit" value="search">
+  </form>
+  <button class="test">测试</button>
+  <p class="ajax"></p>
+  <script src="js/b.js"></script>
+  <script>
+    window.onload = function() {
+      const el = document.getElementsByClassName('test')[0];
+
+      el.addEventListener('click', function() {
+        const ajax = document.getElementsByClassName('ajax')[0];
+        apiV1.search.post({
+          name: 'pipi',
+          age: 18
+        }, function(data) {
+          ajax.innerHTML = data;
+        });
+      });
+    };
+  </script>
+</body>
+</html>
