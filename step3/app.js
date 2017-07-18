@@ -27,7 +27,7 @@ app.use('/hello', function(req, res) {
 
 app.use('/getWeather', function(req, res) {
   res.send({ url:'/getWeather', city: req.query.city });
-})
+});
 
 app.use('/search', function(req, res) {
   res.send(req.body);
