@@ -30,8 +30,10 @@
           el.innerHTML = xhr.responseText;
         }
       }
-      xhr.open('get', '/hello', true);
-      xhr.send();
+      // xhr.open('get', '/hello', true);
+      // xhr.send();
+      xhr.open('post', '/search', true);
+      xhr.send('fname=Henry&lname=Ford');
     };
   </script>
 </body>
