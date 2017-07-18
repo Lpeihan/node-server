@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hello</title>
+  <link rel="stylesheet" href="css/a.css">
+</head>
+<body>
+  <h1>hello world</h1>
+  <img src="images/avatar.jpg" alt="">
+  <form action="/search" method="POST">
+    <input type="text" name="username">
+    <input type="text" name="password">
+    <input type="submit" value="search">
+  </form>
+  <p class="ajax"></p>
+  <script>
+    window.onload = function() {
+      let xhr;
+
+      if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+      } else {
+        xhr = new ActiveXObject('Microsoft.XMLHTTP');
+      }
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          const el = document.getElementsByClassName('ajax')[0];
+          el.innerHTML = xhr.responseText;
+        }
+      }
+      xhr.open('get', '/hello', true);
+      xhr.send();
+    };
+  </script>
+</body>
+</html>
